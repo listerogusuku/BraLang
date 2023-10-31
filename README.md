@@ -46,7 +46,7 @@ LETTER = (a | ... | z | A | ... | Z);
 DIGIT = (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
 ```
 
-#### Example of code in BraLang:
+#### Example (1) of code in BraLang:
 ```
 declare a inteiro <- 5
 declare b inteiro <- 10
@@ -68,4 +68,27 @@ enquanto a < 20 {
 
 mostre(a)
 
+```
+
+#### Example (2) of code in BraLang:
+```
+declare base real <- 5.0
+declare altura real <- 10.0
+declare area real
+
+area <- (base * altura) / 2
+
+mostre("A área do triângulo é: ", area)
+```
+
+#### Example (3) of code in BraLang:
+```
+declare n inteiro <- 5
+declare fatorial inteiro <- 1
+
+para i de 1 ate n passo 1 {
+    fatorial <- fatorial * i
+}
+
+mostre("O fatorial de ", n, " é: ", fatorial)
 ```
