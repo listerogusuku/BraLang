@@ -1,0 +1,75 @@
+// Sou
+// um
+// Comentário
+// Oi oi oi
+
+variavel x_1 int = 0
+variavel x int = 2
+para x_1 = 0; x_1 < 5 && x == 2; x_1 = x_1 + 1 {
+	mostre("ola")
+}
+mostre("finalizei o for")
+
+// Ola comentario
+
+// Ola
+
+// Ola BraLang
+
+mostre(" ")
+mostre(" O l a  s o u  u m  p r i n t")
+mostre(" ")
+
+mostre("-----Operações booleanas:-----")
+
+// Todas as operações bool e int:
+variavel y int = 2
+variavel z int
+z = (y == 2) // comparação booleana
+mostre(y+z)    // 3
+mostre(y-z)    // 1
+mostre(y*z)    // 2
+mostre(y/z)    // 2
+mostre(y == z) // 0
+mostre(y < z)  // 0
+mostre(y > z)  // 1
+
+mostre("-----Operações de string:-----")
+
+variavel a string 
+variavel b string
+variavel x_1 int = 1
+
+x_1 = 1 
+y = 1 
+z = 2
+a = "abc"
+b = "defg"
+mostre(a.b) //concatenacao
+mostre(a.x_1)
+mostre(x_1.a)
+mostre(y.z)
+mostre(a.(x_1==1))
+mostre(a == a)
+mostre(a < b)
+mostre(a > b)
+
+
+mostre("teste teste teste")
+
+
+mostre(" 1 2 3 4 4 5 5 6 6 7  88 9 9  9 89  863 8 8 2  2 8 468 6 24 7  236")
+
+mostre(" 1 ")
+
+mostre(" abcdef ")
+
+mostre(" 54513464643 ")
+
+mostre(" f5ha4fd56jajnkmasflkfjkafdnshjdf ")
+
+mostre(" Aa48S-57gSD-36Hs080s9gS5D8Sf2h-4dg756j89h-hG5487AM63Y,")
+
+mostre(" 1233212458796912235454547552020154514030429717616410972401203205 ")
+
+mostre(" 111111111122222222222222222233333333333333334444444444444444555555555555555555555 ")
