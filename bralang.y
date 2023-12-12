@@ -5,8 +5,8 @@ void yyerror(const char *s);
 %}
 
 
-%token INTEIRO REAL TEXTO ATRIB PARENDIR CHAVEDIR CHAVEESQ VIRGULA PARENESQ
-%token SE SENAO PARA ENQUANTO MOSTRE DECLARE PONTOVIRGULA NAO SUB MULT DIV
+%token INT REAL STRING ATRIB PARENDIR CHAVEDIR CHAVEESQ VIRGULA PARENESQ
+%token SE SENAO PARA MOSTRE VARIAVEL PONTOVIRGULA NAO SUB MULT DIV
 %token IDENTIFICADOR NUMERO
 
 %left OU E
@@ -26,21 +26,20 @@ declaracao:
     ;
 
 declaracao_variavel:
-      DECLARE IDENTIFICADOR tipo ';'
-    | DECLARE IDENTIFICADOR tipo ATRIB expressao ';'
+      VARIAVEL IDENTIFICADOR tipo ';'
+    | VARIAVEL IDENTIFICADOR tipo ATRIB expressao ';'
     ;
 
 tipo: 
-      INTEIRO 
+      INT 
     | REAL 
-    | TEXTO 
+    | STRING 
     ;
 
 instrucao:
       instrucao_se
-    | instrucao_enquanto
     | instrucao_para
-    | instrucao_mostra
+    | instrucao_mostre
     ;
 
 instrucao_se:
@@ -48,15 +47,11 @@ instrucao_se:
     | SE expressao '{' lista_instrucoes '}' SENAO '{' lista_instrucoes '}'
     ;
 
-instrucao_enquanto:
-      ENQUANTO expressao '{' lista_instrucoes '}'
-    ;
-
 instrucao_para:
       PARA '(' declaracao_variavel expressao ';' expressao ')' '{' lista_instrucoes '}'
     ;
 
-instrucao_mostra:
+instrucao_mostre:
       MOSTRE '(' expressao ')' ';'
     ;
 

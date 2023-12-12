@@ -11,10 +11,10 @@ SE              se
 SENAO           senao
 PARA            para
 MOSTRE          mostre
-DECLARE         declare
-INTEIRO         inteiro
+VARIAVEL        variavel
+INT             int
 REAL            real
-TEXTO           texto
+STRING          string
 PARENESQ        \(
 PARENDIR        \)
 CHAVEESQ        \{
@@ -43,10 +43,10 @@ SE                    { return SE; }
 SENAO                 { return SENAO; }
 PARA                  { return PARA; }
 MOSTRE                { return MOSTRE; }
-DECLARE               { return DECLARE; }
-INTEIRO               { return INTEIRO; }
+VARIAVEL              { return VARIAVEL; }
+INT                   { return INT; }
 REAL                  { return REAL; }
-TEXTO                 { return TEXTO; }
+STRING                { return STRING; }
 PARENESQ              { return PARENESQ; }
 PARENDIR              { return PARENDIR; }
 CHAVEESQ              { return CHAVEESQ; }
