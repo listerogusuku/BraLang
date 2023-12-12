@@ -1,94 +1,121 @@
 ## BraLang
 
-![BraLang](http://insideuniversity.com.br/wp-content/uploads/2023/10/BraLang_background.png)
+![BraLang](./BraLang_background.png)
 
-**BraLang** is a programming language adapted for native Portuguese speakers. It was designed with the aim of providing a more intuitive and culturally relevant approach for programmers and learners who are more comfortable with Portuguese-based keywords and structures. Through BraLang, users can write code using terms like se (if), mostre (print), enquanto (while), and others, making the language especially accessible for beginners or for those seeking a Portuguese alternative to traditional programming languages.
+**BraLang** é uma linguagem de programação adaptada para falantes nativos do português, sobretudo **estudantes de escolas públicas, os quais historicamente possuem acesso precário ou ineficiente à língua inglesa e encontram nisso um obstáculo no aprendizado de programação.** A **BraLang** ataca justamente essa dor e foi projetada com o objetivo de quebrar a barreira linguística, visando fornecer uma abordagem mais intuitiva e culturalmente relevante para estudantes e educadores que se sentem mais confortáveis com palavras-chave e estruturas baseadas no português.
 
 
 #### EBNF:
-``` 
+
+```
 PROGRAM = { STATEMENT };
 
 BLOCK = { "{", STATEMENT, "}" };
 
-STATEMENT = ( λ | ASSIGN | IF | PRINT | WHILE | FOR | DECLARE ), "\n" ;
+STATEMENT = ( λ | ASSIGNMENT  | IF_STATEMENT | PRINT | FOR | COMMENT ), "\n" ;
 
-ASSIGN = IDENTIFIER, "<-", EXPRESSION;
-
-DECLARE = "declare", IDENTIFIER, [TYPE | "<-", EXPRESSION];
+ASSIGN = IDENTIFIER, "=", EXPRESSION;
 
 PRINT = "mostre", "(", EXPRESSION, ")";
 
-WHILE = "enquanto", EXPRESSION, BLOCK;
-
-FOR = "para", IDENTIFIER, "de", EXPRESSION, "ate", EXPRESSION, [STEP], BLOCK;
-
-STEP = "passo", EXPRESSION;
+FOR = "para", IDENTIFIER, EXPRESSION, EXPRESSION, BLOCK;
 
 IF = "se", EXPRESSION, BLOCK, ["senao", BLOCK];
 
-EXPRESSION = TERM, {("ou" | "e"), TERM};
+EXPRESSION = TERM, {("+" | "-" ), TERM};
 
 TERM = FACTOR, {("==" | "!=" | ">" | "<" | ">=" | "<="), FACTOR};
 
-FACTOR = ELEMENT, {("+" | "-" | "*" | "/"), ELEMENT};
+FACTOR = (("+" | "-" | "!" | "*" | "/"), FACTOR | DIGIT | MATCH | BOOL | "(", EXPRESSION, ")" | IDENTIFIER);
 
-ELEMENT = (NUMBER | IDENTIFIER | "(" , EXPRESSION , ")" );
+TYPE = ("int" | "real" | "string");
 
-TYPE = ("inteiro" | "real" | "texto");
+COMMENT = "//", { Any valid character }, "\n";
+
+MATCH = "'", { Any valid character }, "'";
 
 IDENTIFIER = LETTER, { LETTER | DIGIT | "_" };
 
 NUMBER = DIGIT, { DIGIT }, [".", {DIGIT}];
 
-LETTER = (a | ... | z | A | ... | Z);
+BOOL = "1" | "0";
 
-DIGIT = (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
+LETTER = ( "a" | ... | "z" | "A" | ... | "Z" );
+
+DIGIT = ( "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" );
+
 ```
 
-#### Example (1) of code in BraLang:
-```
-declare a inteiro <- 5
-declare b inteiro <- 10
-declare resultado inteiro
 
-se a > b {
-    mostre("a é maior que b")
+#### Exemplo (1) de código escrito em BraLang:
+
+```
+variavel y int = 2
+variavel z int
+z = (y == 2)   // comparação booleana
+mostre(y+z)    // 3
+mostre(y-z)    // 1
+mostre(y*z)    // 2
+mostre(y/z)    // 2
+mostre(y == z) // 0
+mostre(y < z)  // 0
+mostre(y > z)  // 1
+```
+
+#### Exemplo (2) de código escrito em BraLang:
+
+```
+mostre("- - - BraLang - - -")
+mostre("Olá, tudo bem?")
+mostre("Para mostrar algo na tela, utilize o mostre()")
+mostre("- - - BraLang - - -")
+
+```
+#### Exemplo (3) de código escrito em BraLang:
+
+```
+variavel x int = 0
+variavel y int = 2
+para x = 0; x < 5 && y == 2; x = x + 1 {
+    mostre("Ola!")
+}
+mostre("Você chegou ao fim do seu programa BraLang!!")
+```
+
+#### Exemplo (4) de código escrito em BraLang:
+
+```
+variavel x_1 int = 3
+
+se (x_1 > 1 && !!!(x_1 < 1)) || x_1 == 3 {
+    x_1 = 2
+    mostre(x_1)
 } senao {
-    mostre("b é maior ou igual a a")
+    mostre(x_1+1)
 }
 
-para i de 1 ate 10 passo 1 {
-    mostre(i)
-}
-
-enquanto a < 20 {
-    a <- a + 1
-}
-
-mostre(a)
-
+mostre("Fim!")
 ```
 
-#### Example (2) of code in BraLang:
+
+#### Exemplo (5) de código escrito em BraLang:
+
 ```
-declare base real <- 5.0
-declare altura real <- 10.0
-declare area real
+variavel a string
+variavel b string
+variavel x_1 int = 1
 
-area <- (base * altura) / 2
-
-mostre("A área do triângulo é: ", area)
-```
-
-#### Example (3) of code in BraLang:
-```
-declare n inteiro <- 5
-declare fatorial inteiro <- 1
-
-para i de 1 ate n passo 1 {
-    fatorial <- fatorial * i
-}
-
-mostre("O fatorial de ", n, " é: ", fatorial)
+x_1 = 1
+y = 1
+z = 2
+a = "abc"
+b = "defg"
+mostre(a.b) //concatenacao
+mostre(a.x_1)
+mostre(x_1.a)
+mostre(y.z)
+mostre(a.(x_1==1))
+mostre(a == a)
+mostre(a < b)
+mostre(a > b)
 ```
