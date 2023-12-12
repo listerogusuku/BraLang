@@ -4,7 +4,7 @@
 
 **BraLang** é uma linguagem de programação adaptada para falantes nativos do português, sobretudo **estudantes de escolas públicas, os quais historicamente possuem acesso precário ou ineficiente à língua inglesa e encontram nisso um obstáculo no aprendizado de programação.** A **BraLang** ataca justamente essa dor e foi projetada com o objetivo de quebrar a barreira linguística, visando fornecer uma abordagem mais intuitiva e culturalmente relevante para estudantes e educadores que se sentem mais confortáveis com palavras-chave e estruturas baseadas no português.
 
-A apresentação completa da BraLang no formato .pdf está disponível na raiz deste repositório.
+A apresentação completa da BraLang no formato .pdf está disponível na raiz deste repositório, no arquivo []"Apresentacao_BraLang.pdf"](https://github.com/listerogusuku/BraLang/blob/main/Apresentacao_BraLang.pdf)
 
 #### EBNF:
 
