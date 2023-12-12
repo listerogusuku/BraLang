@@ -48,11 +48,10 @@ DIGIT = ( "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" );
 
 #### Flex & Bison:
 ```
-sudo apt install flex
-sudo apt install bison
-git clone https://github.com/listerogusuku/BraLang
-cd BraLang/
-./main.sh
+flex flex.l
+bison -d bralang.y
+gcc lex.yy.c bralang.tab.c -o bralang
+./bralang < teste.bl
 ```
 
 #### Compilador:
