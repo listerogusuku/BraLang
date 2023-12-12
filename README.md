@@ -82,8 +82,10 @@ mostre(y > z)  // 1
 
 ```
 mostre("- - - BraLang - - -")
+
 mostre("Olá, tudo bem?")
 mostre("Para mostrar algo na tela, utilize o mostre()")
+
 mostre("- - - BraLang - - -")
 
 ```
@@ -103,14 +105,12 @@ mostre("Você chegou ao fim do seu programa BraLang!!")
 
 ```
 variavel x_1 int = 3
-
 se (x_1 > 1 && !!!(x_1 < 1)) || x_1 == 3 {
     x_1 = 2
     mostre(x_1)
 } senao {
     mostre(x_1+1)
 }
-
 mostre("Fim!")
 ```
 
