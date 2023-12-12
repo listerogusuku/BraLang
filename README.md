@@ -4,7 +4,7 @@
 
 **BraLang** é uma linguagem de programação adaptada para falantes nativos do português, sobretudo **estudantes de escolas públicas, os quais historicamente possuem acesso precário ou ineficiente à língua inglesa e encontram nisso um obstáculo no aprendizado de programação.** A **BraLang** ataca justamente essa dor e foi projetada com o objetivo de quebrar a barreira linguística, visando fornecer uma abordagem mais intuitiva e culturalmente relevante para estudantes e educadores que se sentem mais confortáveis com palavras-chave e estruturas baseadas no português.
 
-A apresentação completa da BraLang no formato .pdf está disponível na raiz deste repositório, no arquivo []"Apresentacao_BraLang.pdf"](https://github.com/listerogusuku/BraLang/blob/main/Apresentacao_BraLang.pdf)
+A apresentação completa da BraLang no formato .pdf está disponível na raiz deste repositório, no arquivo ["Apresentacao_BraLang.pdf"](https://github.com/listerogusuku/BraLang/blob/main/Apresentacao_BraLang.pdf)
 
 #### EBNF:
 
@@ -27,26 +27,21 @@ EXPRESSION = TERM, {("+" | "-" ), TERM};
 
 TERM = FACTOR, {("==" | "!=" | ">" | "<" | ">=" | "<="), FACTOR};
 
-FACTOR = (("+" | "-" | "!" | "*" | "/"), FACTOR | DIGIT | MATCH | BOOL | "(", EXPRESSION, ")" | IDENTIFIER);
+FACTOR = (("+" | "-" | "!" | "*" | "/"), FACTOR | DIGIT | "(", EXPRESSION, ")" | IDENTIFIER);
 
-TYPE = ("int" | "real" | "string");
+TYPE = ("int" | "string");
 
 COMMENT = "//", { Any valid character }, "\n";
-
-MATCH = "'", { Any valid character }, "'";
 
 IDENTIFIER = LETTER, { LETTER | DIGIT | "_" };
 
 NUMBER = DIGIT, { DIGIT }, [".", {DIGIT}];
-
-BOOL = "1" | "0";
 
 LETTER = ( "a" | ... | "z" | "A" | ... | "Z" );
 
 DIGIT = ( "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" );
 
 ```
-
 
 #### Exemplo (1) de código escrito em BraLang:
 
@@ -72,6 +67,7 @@ mostre("Para mostrar algo na tela, utilize o mostre()")
 mostre("- - - BraLang - - -")
 
 ```
+
 #### Exemplo (3) de código escrito em BraLang:
 
 ```
@@ -98,7 +94,6 @@ se (x_1 > 1 && !!!(x_1 < 1)) || x_1 == 3 {
 mostre("Fim!")
 ```
 
-
 #### Exemplo (5) de código escrito em BraLang:
 
 ```
@@ -120,3 +115,18 @@ mostre(a == a)
 mostre(a < b)
 mostre(a > b)
 ```
+
+## Testando a linguagem:
+
+### Flex & Bison:
+```
+sudo apt install flex
+sudo apt install bison
+git clone https://github.com/listerogusuku/BraLang
+cd BraLang/
+./main.sh
+```
+
+### Compilador:
+cd Compilador
+python main.py main.bl
