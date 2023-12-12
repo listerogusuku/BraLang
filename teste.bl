@@ -1,0 +1,8 @@
+mostre("----- Vamos testar o for-----")
+
+variavel x_1 int = 0
+variavel x int = 2
+para x_1 = 0; x_1 < 5 && x == 2; x_1 = x_1 + 1 {
+	mostre("ola")
+}
+mostre("finalizei o for")
