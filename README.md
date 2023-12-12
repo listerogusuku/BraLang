@@ -43,6 +43,26 @@ DIGIT = ( "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" );
 
 ```
 
+
+### Testando a linguagem:
+
+#### Flex & Bison:
+```
+sudo apt install flex
+sudo apt install bison
+git clone https://github.com/listerogusuku/BraLang
+cd BraLang/
+./main.sh
+```
+
+#### Compilador:
+```
+cd Compilador
+python main.py main.bl
+```
+
+### Exemplos:
+
 #### Exemplo (1) de código escrito em BraLang:
 
 ```
@@ -115,18 +135,3 @@ mostre(a == a)
 mostre(a < b)
 mostre(a > b)
 ```
-
-## Testando a linguagem:
-
-### Flex & Bison:
-```
-sudo apt install flex
-sudo apt install bison
-git clone https://github.com/listerogusuku/BraLang
-cd BraLang/
-./main.sh
-```
-
-### Compilador:
-cd Compilador
-python main.py main.bl
